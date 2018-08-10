@@ -33,7 +33,7 @@ module.exports = (function () {
 
 		this.run = function () {
 			var _now = moment();
-			// Note: _lastRun can be a future date, e.g. when the user adjusted the clock of the device. 
+			// Note: _lastRun can be a future date, e.g. when the user adjusted the clock of the device.
 			var diff = (this._lastRun && this._lastRun < _now) ? _now - this._lastRun : this._durationMilliseconds;
 			// var result = {
 			// 	skipped: false,
@@ -67,7 +67,7 @@ module.exports = (function () {
 				} else {
 					this.promise = null;
 					this.skipped = true;
-					this.message = '[NoCronTask] ' + this._name + " not run, next check in " + _duration.humanize();
+					this.message = '[NoCronTask] ' + this._name + " not run, next check in " + this._duration.humanize();
 				}
 			} else {
 				this.promise = null;
